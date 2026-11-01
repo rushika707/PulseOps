@@ -1,0 +1,209 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #100d19;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    display: flex;
+}
+
+/* Sidebar */
+
+.sidebar {
+    width: 240px;
+    height: 100vh;
+    background: #191326;
+    padding: 30px 20px;
+    position: fixed;
+    border-right: 1px solid #302442;
+}
+
+.sidebar h2 {
+    color: #b794ff;
+    font-size: 27px;
+}
+
+.subtitle {
+    color: #8f829f;
+    font-size: 11px;
+    margin-top: 8px;
+}
+
+nav {
+    margin-top: 50px;
+}
+
+nav a {
+    display: block;
+    padding: 15px;
+    color: #b9aec9;
+    text-decoration: none;
+    margin-bottom: 10px;
+    border-radius: 7px;
+}
+
+nav a.active,
+nav a:hover {
+    background: #34234d;
+    color: white;
+}
+
+.sidebar-bottom {
+    position: absolute;
+    bottom: 30px;
+    color: #a99bb9;
+    font-size: 13px;
+}
+
+.sidebar-bottom span {
+    display: block;
+    color: #4ade80;
+    margin-top: 10px;
+}
+
+/* Main */
+
+main {
+    margin-left: 240px;
+    width: calc(100% - 240px);
+    padding: 35px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+header h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #a99bb9;
+}
+
+.live {
+    color: #4ade80;
+    font-size: 12px;
+    background: #173125;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+/* Cards */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: #211a30;
+    padding: 25px;
+    border: 1px solid #382a4d;
+    border-radius: 12px;
+}
+
+.card p {
+    color: #b8a9ca;
+    font-size: 14px;
+}
+
+.card h2 {
+    margin-top: 20px;
+    font-size: 35px;
+}
+
+.green {
+    color: #4ade80;
+}
+
+.yellow {
+    color: #facc15;
+}
+
+.red {
+    color: #f87171;
+}
+
+/* Tables */
+
+.panel {
+    background: #211a30;
+    border: 1px solid #382a4d;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    overflow-x: auto;
+}
+
+.panel h2 {
+    margin-bottom: 25px;
+    color: #d4c3ed;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 500px;
+}
+
+th, td {
+    padding: 17px;
+    text-align: left;
+    border-bottom: 1px solid #382a4d;
+}
+
+th {
+    color: #a99bb9;
+    font-size: 13px;
+}
+
+td {
+    font-size: 14px;
+}
+
+.healthy {
+    color: #4ade80;
+}
+
+.degraded {
+    color: #facc15;
+}
+
+.down {
+    color: #f87171;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #82758f;
+}
+
+@media(max-width: 900px) {
+
+    .sidebar {
+        display: none;
+    }
+
+    main {
+        margin-left: 0;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>PulseOps | Monitoring Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <aside class="sidebar">
+
+        <h2>PulseOps</h2>
+
+        <p class="subtitle">DEVOPS MONITORING</p>
+
+        <nav>
+            <a class="active">Dashboard</a>
+            <a href="#services">Services</a>
+            <a href="#incidents">Incidents</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            Real-Time Monitoring
+            <span>● System Active</span>
+        </div>
+
+    </aside>
+
+    <main>
+
+        <header>
+
+            <div>
+                <h1>Monitoring Dashboard</h1>
+                <p>Monitor your application services</p>
+            </div>
+
+            <div class="live">
+                ● LIVE MONITORING
+            </div>
+
+        </header>
+
+        <section class="cards">
+
+            <div class="card">
+                <p>Total Services</p>
+                <h2 id="total">0</h2>
+            </div>
+
+            <div class="card">
+                <p>Healthy</p>
+                <h2 id="healthy" class="green">0</h2>
+            </div>
+
+            <div class="card">
+                <p>Degraded</p>
+                <h2 id="degraded" class="yellow">0</h2>
+            </div>
+
+            <div class="card">
+                <p>Down</p>
+                <h2 id="down" class="red">0</h2>
+            </div>
+
+        </section>
+
+        <section id="services" class="panel">
+
+            <h2>Service Health</h2>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Service</th>
+                        <th>Status</th>
+                        <th>Response Time</th>
+                        <th>Last Checked</th>
+                    </tr>
+                </thead>
+
+                <tbody id="serviceTable"></tbody>
+
+            </table>
+
+        </section>
+
+        <section id="incidents" class="panel">
+
+            <h2>Incident History</h2>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Service</th>
+                        <th>Description</th>
+                        <th>Severity</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody id="incidentTable"></tbody>
+
+            </table>
+
+        </section>
+
+        <footer>
+            PulseOps | DevOps Service Monitoring Platform
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

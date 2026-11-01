@@ -1,0 +1,43 @@
+
+services:
+
+  backend:
+    build: ./backend
+    container_name: pulseops-backend
+    ports:
+      - "3000:3000"
+    environment:
+      USER_SERVICE_URL: http://user-service:4000/health
+      PAYMENT_SERVICE_URL: http://payment-service:4000/health
+    depends_on:
+      - user-service
+      - payment-service
+    restart: unless-stopped
+
+  user-service:
+    build: ./demo-service
+    container_name: user-service
+    environment:
+      SERVICE_NAME: "User Service"
+      PORT: 4000
+      DELAY_MS: 120
+    restart: unless-stopped
+
+  payment-service:
+    build: ./demo-service
+    container_name: payment-service
+    environment:
+      SERVICE_NAME: "Payment Service"
+      PORT: 4000
+      DELAY_MS: 150
+    restart: unless-stopped
+
+  mongo:
+    image: mongo:7
+    container_name: pulseops-mongo
+    volumes:
+      - mongo-data:/data/db
+    restart: unless-stopped
+
+volumes:
+  mongo-data:
